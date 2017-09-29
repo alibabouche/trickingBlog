@@ -1,0 +1,29 @@
+       
+<div class="discussion">
+	
+		<?php foreach($resultPostsRequest as $resultPostRequest):?>
+			<a href="#">
+				<p class="postList"><?=$resultPostRequest["title_post"]?><br/>
+				Créé par :<b><?=$resultPostRequest["last_name"]?> 
+				<?= $resultPostRequest["first_name"]?></b><br/>
+				<small>le: <?=$resultPostRequest["date_post"]?></small></p>
+			</a>
+		<?php endforeach; ?>
+		
+	<form method="post">
+		<ul class="ulDiscussion">
+			<li>
+				<label for="posts">Sujet : </label>
+				<input type="text" id="posts" name="posts"/>
+			</li>
+			<li>
+				<label for="article">Article : </label>
+				<textarea name="article" id="article" rows="10"></textarea>
+			</li>
+			<li>
+				<input type="submit" class="button" value="Kick" name="sub" />
+				<button type="reset" class="button" />Effacer</button>
+			</li>
+		</ul>
+	</form>
+</div>

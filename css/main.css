@@ -1,0 +1,407 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+/* ==========================================================================
+Animations
+========================================================================== */
+@keyframes opacitateBlue{
+    0%{
+        background-color: rgba(108,155,189,0)
+    }
+    100%{
+        background-color: rgba(108,155,189,0.7)
+    }
+}
+@keyframes opacitation{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/*
+
+color orange :#F5AC2D;
+
+*/
+
+
+/*=================style général========================*/
+body{
+    background-image: url("../img/background.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+small{
+    font-size: 0.6em;
+}
+.display{
+    display: none;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+hr{
+    margin: 0;
+}
+h1{
+    text-align: center;
+    color: #F5AC2D;
+}
+h2{
+    color: #ECDF46;
+}
+
+h3{
+    margin: 0;
+}
+
+.login{
+    position: absolute;
+    top: 0;
+    right: 2em;
+}
+
+.fa{
+    display: none;
+}
+
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: #F4A74B;
+}
+.account{
+    display: inline-block;
+    padding: 0.5em 0.5em 0.5em 0;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em; 
+    box-shadow: 0px 0px 4px #6DD0FF;
+    position: absolute;
+}
+header nav{
+    margin: 2em 0;
+}
+header nav ul li a:active,
+header nav ul li a:focus,
+header nav ul li a:hover
+{
+    text-shadow: 0px 0px 5px grey;
+}
+
+/*=================style des formulaires========================*/
+form{
+    display: flex;
+    justify-content: space-around;
+    margin: 2em 0;
+    color: #F4A74B;
+}
+form ul li{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5em;
+}
+form ul li:last-child{
+    justify-content: center;
+    margin: 1em;
+}
+form ul li input{
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 2px #F4A74B;
+    text-align: center;
+}
+form ul li input:first-child{
+    background-color: rgba(219,167,75,0.1);
+    border: solid 2px #F4A74B;
+}
+
+/*===============INDEX========================*/
+
+.principalImg{
+    display: block;
+    width: 40em;
+    margin: 5em auto;
+    border: solid #F4A74B 10px;
+    box-shadow: 1px 1px 5px black;
+    animation: ease 2.5s opacitation;
+}
+
+/*===============TUTAUX========================*/
+
+.tutaux{
+    text-align: center;
+}
+
+.tutaux .elans,
+.tutaux .kicks,
+.tutaux .acros{    
+    padding: 1.5em 0;
+}
+
+.tutaux .elans:hover,
+.tutaux .kicks:hover,
+.tutaux .acros:hover{
+    animation: opacitateBlue 0.3s ease-in-out;
+    background-color: rgba(108,155,189,0.7)
+}
+
+
+
+video{
+    width: 17em;
+    height: 10em;
+}
+
+/*===============DISCUSSION========================*/           
+.discussion {
+    text-align: center;
+    margin: 0 auto;
+}
+.ulDiscussion{
+    width: 70%;
+}
+
+.ulDiscussion li input{
+    text-align: left;
+    background-color: transparent;
+    border-bottom: solid 2px #F4A74B;
+}
+
+.ulDiscussion li:last-child input,
+.ulDiscussion li:last-child button{
+    width: 5em;
+    text-align: center;
+    background-color: transparent;
+    border: solid 2px #F4A74B;
+    margin: 1em;
+}
+
+.ulDiscussion textarea{
+    background-color: transparent;
+    border: solid 2px #F4A74B;
+    height: 5em;
+}
+
+/*===================style des postes=============*/
+
+.postList{
+    color: #F5AC2D;
+    text-transform: lowercase;
+    width: 100%;
+}
+.postList:hover{
+    animation: opacitateBlue 0.3s ease-in-out;
+    background-color: rgba(108,155,189,0.7);
+}
+
+
+/*===============FOOTER========================*/
+#footerLine{
+    background-color: #446B8A; 
+    height: 3px;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media screen and (min-width: 390px) {
+    .layout ul{
+        display: flex;
+        justify-content: space-around;
+    }
+    .acount{
+        position: absolute;
+        top: 10em;
+        left: 0;
+    }
+    .ulDiscussion textarea,
+    .ulDiscussion li input{
+    width: 90%;
+    }
+    .ulDiscussion{
+        width: 85%;
+    }
+    .discussion{
+        
+    }
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
