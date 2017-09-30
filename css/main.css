@@ -21,7 +21,7 @@ hr {
     height: 1px;
     border: 0;
     border-top: 1px solid #ccc;
-    margin: 1em 0;
+    margin:0;
     padding: 0;
 }
 
@@ -99,13 +99,12 @@ ul{
     margin: 0;
     text-align: center;
 }
-hr{
-    margin: 0;
-}
+
 h1{
     text-align: center;
     color: #F5AC2D;
 }
+
 h2{
     color: #ECDF46;
 }
@@ -120,7 +119,16 @@ h3{
     right: 2em;
 }
 
-.fa{
+.account{
+        display: inline-block;
+        padding: 0.5em 0.5em 0.5em 0;
+        border-top-right-radius: 1em;
+        border-bottom-right-radius: 1em; 
+        box-shadow: 0px 0px 4px #6DD0FF;
+        position: relative;
+    }
+
+.index .principalImg{
     display: none;
 }
 
@@ -130,14 +138,7 @@ a{
     font-weight: normal;
     color: #F4A74B;
 }
-.account{
-    display: inline-block;
-    padding: 0.5em 0.5em 0.5em 0;
-    border-top-right-radius: 1em;
-    border-bottom-right-radius: 1em; 
-    box-shadow: 0px 0px 4px #6DD0FF;
-    position: absolute;
-}
+
 header nav{
     margin: 2em 0;
 }
@@ -149,6 +150,10 @@ header nav ul li a:hover
 }
 
 /*=================style des formulaires========================*/
+.login{
+    display: block;
+    margin: 0 auto;
+}
 form{
     display: flex;
     justify-content: space-around;
@@ -180,10 +185,10 @@ form ul li input:first-child{
 .principalImg{
     display: block;
     width: 40em;
-    margin: 5em auto;
-    border: solid #F4A74B 10px;
+    margin: 5em auto;    
+    animation: ease 1s opacitation;
+    border: solid #446B8A 10px;
     box-shadow: 1px 1px 5px black;
-    animation: ease 2.5s opacitation;
 }
 
 /*===============TUTAUX========================*/
@@ -205,8 +210,6 @@ form ul li input:first-child{
     background-color: rgba(108,155,189,0.7)
 }
 
-
-
 video{
     width: 17em;
     height: 10em;
@@ -217,18 +220,30 @@ video{
     text-align: center;
     margin: 0 auto;
 }
-.ulDiscussion{
+.discussion a form{
+    display: none;
+}
+.discussion a form ul{
     width: 70%;
 }
 
-.ulDiscussion li input{
+.discussion a form ul li textarea{
+    width: 100%;
+
+}
+
+.discussion a form ul li label{
+    text-transform: capitalize;
+}
+
+.discussion li input{
     text-align: left;
     background-color: transparent;
     border-bottom: solid 2px #F4A74B;
 }
 
-.ulDiscussion li:last-child input,
-.ulDiscussion li:last-child button{
+.discussion li:last-child input,
+.discussion li:last-child button{
     width: 5em;
     text-align: center;
     background-color: transparent;
@@ -236,11 +251,13 @@ video{
     margin: 1em;
 }
 
-.ulDiscussion textarea{
+.discussion textarea{
     background-color: transparent;
     border: solid 2px #F4A74B;
     height: 5em;
+    resize: none;
 }
+
 
 /*===================style des postes=============*/
 
@@ -270,20 +287,28 @@ video{
         display: flex;
         justify-content: space-around;
     }
+
+    .index .principalImg{
+        display: block;
+    }
+
     .acount{
         position: absolute;
         top: 10em;
         left: 0;
     }
+    
     .ulDiscussion textarea,
     .ulDiscussion li input{
-    width: 90%;
+    width: 100%;
     }
     .ulDiscussion{
         width: 85%;
     }
-    .discussion{
-        
+    
+    .tutaux ul li ul li{
+        display: inline-block;
+        width: 25%;
     }
 }
 

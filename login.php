@@ -18,8 +18,8 @@ function verifyPassword($password, $hash)
 if(isset($_POST["pseudo"])&&isset($_POST["password"]))
 {
 
-	$pseudo = $_POST["pseudo"];
-	$password = hashPassword($_POST["password"]);	
+	$pseudo = trim($_POST["pseudo"]);
+	$password = hashPassword(trim($_POST["password"]));	
 	$success = verifyPassword($_POST["password"], $password);
 
 	if($success == true)

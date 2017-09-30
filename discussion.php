@@ -27,12 +27,12 @@
 		//recherche des post
 		include "connectionPDO.php";
 		$query = $pdo->prepare("
-		SELECT title_post, date_post, authors.first_name, authors.last_name
+		SELECT title_post, date_post, authors.pseudo, posts.id
 		FROM posts
 		INNER JOIN authors ON authors.id = posts.id_author;");
 		$query->execute();
 		$resultPostsRequest = $query->fetchAll(PDO::FETCH_ASSOC);
-		$pdo = null;		
+		$pdo = null;
 		
 		$page = "discussion";
 		include "layout.phtml";		

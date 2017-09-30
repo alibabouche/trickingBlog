@@ -1,24 +1,37 @@
 $(document).ready(function(){
+	"use strict";
+
 
 //event sur la page TUTAUX:
 	$(".tutaux .elans").click(function(){
 		
-		$(".elan").slideToggle(1000);
-		//$(".kick").hide();
-		//$(".acro").hide();
+		$(".elan").toggle(500);
+		$(".kicks").toggle(500);
+		$(".acros").toggle(500);
+		
 	});
 
 	$(".tutaux .kicks").click(function(){
 
-		$(".kick").slideToggle(1000);
-		//$(".elan").hide();
-		//$(".acro").hide();
+		$(".kick").toggle(500);
+		$(".elans").toggle(500);
+		$(".acros").toggle(500);
+		
 	});
 
 	$(".tutaux .acros").click(function(){
 
-		$(".acro").slideToggle(1000);
-		//$(".elan").hide();
-		//$(".kick").hide();
+		$(".acro").toggle(500);
+		$(".elans").toggle(500);
+		$(".kicks").toggle(500);
+		
 	});
+
+//event sur la page DISCUSSION
+	var form = document.querySelector(".discussion a");
+	
+	form.addEventListener("click", function(){
+		$(".discussion a form").dataSet("idPost").show(400);
+	});
+	
 });
