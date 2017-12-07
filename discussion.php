@@ -16,14 +16,14 @@
 			include "connectionPDO.php";
 			$query = $pdo->prepare("
 				INSERT INTO posts
-				VALUES (null, ?, ?, NOW(), ?);
+				VALUES (null, ?, ?, NOW(), ?, ?);
 				");
-			$query->execute([$posts, $article, $idSession]);
+			$query->execute([$posts, $article, $idSession, $idSession]);
 			$pdo = null;
 
 			header ("Location: discussion.php");
-		}		
-	  
+		}
+
 		//recherche des post
 		include "connectionPDO.php";
 		$query = $pdo->prepare("
@@ -43,14 +43,14 @@
 			$query->execute([$idSession, $idPost, $answer ]);
 			$pdo = null;
 		}
-		
-		
+
+
 		$page = "discussion";
-		include "layout.phtml";		
+		include "layout.phtml";
 	}
 
 	if(!isset($_SESSION['connection']))
-	{	
+	{
 		echo "<div class='account'>
 	            <a href='subscribe.php' id='subscribe'>Inscription</a>
 	            <a href='login.php' id='login'>Login</a>

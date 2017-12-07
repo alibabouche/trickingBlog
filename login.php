@@ -15,34 +15,28 @@ function verifyPassword($password, $hash)
 		return crypt($password, $hash) == $hash;
 	}
 
-if(isset($_POST["pseudo"])&&isset($_POST["password"]))
+if(isset($_POST["pseudo"]) && isset($_POST["password"]))
 {
+	$pseudo   = trim($_POST["pseudo"]);
 
-	$pseudo = trim($_POST["pseudo"]);
-	$password = hashPassword(trim($_POST["password"]));	
-	$success = verifyPassword($_POST["password"], $password);
+	include "connectionPDO.php";
+	$query = $pdo->prepare("SELECT id, last_name, pseudo, password FROM authors WHERE pseudo = ?");
+	$query->execute([$pseudo]);
+	$loginTable = $query->fetch(PDO::FETCH_ASSOC);
+	$pdo = null;
 
-	if($success == true)
+	$success  = verifyPassword($_POST["password"], $loginTable["password"]);
+
+	if($success)
 	{
-    	$_SESSION['connection'] = true;
-
-    	include "connectionPDO.php";
-
-    	$query = $pdo->prepare("SELECT id, last_name FROM authors WHERE pseudo = ?");
-
-    	$query->execute([$pseudo]);
-
-    	$loginTable = $query->fetch(PDO::FETCH_ASSOC);
-
-    	$pdo = null;
-
+		$_SESSION["connection"] = true;
 		$_SESSION['idSession'] = $loginTable['id'];
 		$_SESSION['pseudo'] = $loginTable['last_name'];
-		header("Location: index.php");				
+		header("Location: index.php");
 	}
 }
 
-	
+
 
 if(isset($_SESSION['connection']) && $_SESSION['connection'] == true)
     {

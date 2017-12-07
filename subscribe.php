@@ -5,8 +5,7 @@ function hashPassword($password)
 	{
 		$randomString = bin2hex(openssl_random_pseudo_bytes(32));
 		$randomString = substr($randomString, 0, 22);
-		$salt = '$2y$11$'.$randomString; // '$2y$11$' 2ypermet d'utiliser blowFish
-
+		$salt = '$2y$11$'.$randomString; // '$2y$11$' 2y permet d'utiliser blowFish
 		return crypt($password, $salt);
 	}
 
@@ -20,7 +19,7 @@ if(
 	$lastName = $_POST["lastName"];
 	$firstName = $_POST["firstName"];
 	$pseudo = $_POST["pseudo"];
-	$password = $_POST["password"];	
+	$password = $_POST["password"];
 	$password = hashPassword($password);
 
 	include "connectionPDO.php";

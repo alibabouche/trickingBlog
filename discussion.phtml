@@ -1,4 +1,4 @@
-       
+
 <div class="discussion">
 	<div class="posts">
 		<?php	foreach($resultPostsRequest as $resultPostRequest):?>
@@ -9,7 +9,7 @@
 					<br/>
 					<small>le: <?=$resultPostRequest["date_post"]?></small>
 				</p>
-				<form method="get" action="discussion" class="form-comments display">
+				<form method="get" action="discussion.php" class="form-comments display">
 					<ul>
 						<li>
 							<input type="hidden" name="idPost" value="<?= $resultPostRequest['id'] ?>">
@@ -25,7 +25,7 @@
 				</form>
 		<?php endforeach; ?>
   </div>
-		
+
 	<form method="post">
 		<ul class="ulDiscussion">
 			<li>
