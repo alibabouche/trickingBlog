@@ -28,10 +28,11 @@ $(document).ready(function(){
 	});
 
 //event sur la page DISCUSSION
-	var form = document.querySelector(".discussion a");
-	
-	form.addEventListener("click", function(){
-		$(".discussion a form").dataSet("idPost").show(400);
+	$(".discussion .postList").on("click", function(){
+		$(this).next("form").toggleClass("display");
+		console.log($(this).next("form"));
 	});
-	
+
+
+
 });

@@ -23,7 +23,7 @@
 
 			header ("Location: discussion.php");
 		}		
-	    
+	  
 		//recherche des post
 		include "connectionPDO.php";
 		$query = $pdo->prepare("
@@ -33,6 +33,17 @@
 		$query->execute();
 		$resultPostsRequest = $query->fetchAll(PDO::FETCH_ASSOC);
 		$pdo = null;
+
+		if(isset($_GET["submitAnswer"]))
+		{
+			$idPost = $_GET["idPost"];
+			$answer = $_GET["answer"];
+			//insertion des commentaires
+			$query = $pdo->prepare(" INSERT INTO comments VALUES (null, ?,?,?)");
+			$query->execute([$idSession, $idPost, $answer ]);
+			$pdo = null;
+		}
+		
 		
 		$page = "discussion";
 		include "layout.phtml";		

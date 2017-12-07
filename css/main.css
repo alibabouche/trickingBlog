@@ -83,7 +83,7 @@ color orange :#F5AC2D;
 
 /*=================style général========================*/
 body{
-    background-image: url("../img/background.jpg");
+    /*background-image: url("../img/background.jpg");*/
     background-position: top center;
     background-repeat: no-repeat;
 }
@@ -120,27 +120,27 @@ h3{
 }
 
 .account{
-        display: inline-block;
-        padding: 0.5em 0.5em 0.5em 0;
-        border-top-right-radius: 1em;
-        border-bottom-right-radius: 1em; 
-        box-shadow: 0px 0px 4px #6DD0FF;
-        position: relative;
+  display: inline-block;
+  padding: 0.5em 0.5em 0.5em 0;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  box-shadow: 0px 0px 4px #6DD0FF;
+  position: relative;
     }
 
 .index .principalImg{
-    display: none;
+  display: none;
 }
 
 a{
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: normal;
-    color: #F4A74B;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #F4A74B;
 }
 
 header nav{
-    margin: 2em 0;
+  margin: 2em 0;
 }
 header nav ul li a:active,
 header nav ul li a:focus,
@@ -155,9 +155,8 @@ header nav ul li a:hover
     margin: 0 auto;
 }
 form{
-    display: flex;
-    justify-content: space-around;
-    margin: 2em 0;
+    margin: 0 auto;
+    width: 50%;
     color: #F4A74B;
 }
 form ul li{
@@ -185,7 +184,7 @@ form ul li input:first-child{
 .principalImg{
     display: block;
     width: 40em;
-    margin: 5em auto;    
+    margin: 5em auto;
     animation: ease 1s opacitation;
     border: solid #446B8A 10px;
     box-shadow: 1px 1px 5px black;
@@ -199,37 +198,33 @@ form ul li input:first-child{
 
 .tutaux .elans,
 .tutaux .kicks,
-.tutaux .acros{    
-    padding: 1.5em 0;
+.tutaux .acros{
+  padding: 1.5em 0;
 }
 
 .tutaux .elans:hover,
 .tutaux .kicks:hover,
 .tutaux .acros:hover{
-    animation: opacitateBlue 0.3s ease-in-out;
-    background-color: rgba(108,155,189,0.7)
+  animation: opacitateBlue 0.3s ease-in-out;
+  background-color: rgba(108,155,189,0.7)
 }
 
-video{
-    width: 17em;
-    height: 10em;
+iframe{
+  width: 90%;
+  margin: 1em;
 }
 
-/*===============DISCUSSION========================*/           
+/*===============DISCUSSION========================*/
 .discussion {
-    text-align: center;
-    margin: 0 auto;
-}
-.discussion a form{
-    display: none;
+  text-align: center;
+  margin: 0 auto;
 }
 .discussion a form ul{
-    width: 70%;
+  width: 70%;
 }
 
 .discussion a form ul li textarea{
-    width: 100%;
-
+  width: 100%;
 }
 
 .discussion a form ul li label{
@@ -256,8 +251,8 @@ video{
     border: solid 2px #F4A74B;
     height: 5em;
     resize: none;
+    width: 100%;
 }
-
 
 /*===================style des postes=============*/
 
@@ -269,12 +264,13 @@ video{
 .postList:hover{
     animation: opacitateBlue 0.3s ease-in-out;
     background-color: rgba(108,155,189,0.7);
+    cursor: pointer;
 }
 
 
 /*===============FOOTER========================*/
 #footerLine{
-    background-color: #446B8A; 
+    background-color: #446B8A;
     height: 3px;
 }
 
@@ -297,7 +293,7 @@ video{
         top: 10em;
         left: 0;
     }
-    
+
     .ulDiscussion textarea,
     .ulDiscussion li input{
     width: 100%;
@@ -305,7 +301,7 @@ video{
     .ulDiscussion{
         width: 85%;
     }
-    
+
     .tutaux ul li ul li{
         display: inline-block;
         width: 25%;

@@ -1,11 +1,11 @@
-<?php 
+<?php
 session_start();
 
 if(isset($_SESSION['connection']) && $_SESSION['connection'] == true)
     {
-	echo "<div class='account'>Bonjour, ".$_SESSION['pseudo'].
-    "<a href='disconnect.php'> Déconexion</a>
-    </div>";
+          echo "<div class='account'>Bonjour, ".$_SESSION['pseudo'].
+          "<a href='disconnect.php'> Déconexion</a>
+          </div>";      
     }
 
 if(!isset($_SESSION['connection']))

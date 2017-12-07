@@ -1,28 +1,30 @@
        
 <div class="discussion">
-
-	<?php foreach($resultPostsRequest as $resultPostRequest):?>
-		<a href="#">
-			<p class="postList" >
-				<?=$resultPostRequest["title_post"]?>
-				<br/>
-				Créé par :<b><?=$resultPostRequest["pseudo"]?></b>
-				<br/>
-				<small>le: <?=$resultPostRequest["date_post"]?></small>
-			</p>
-			<form method="post" action="discussion" data-idPost="<?= $resultPostRequest["id"]?>">
-				<ul>
-					<li>
-						<label for="answer"></label>
-						<textarea name="answer" id="answer" rows="10" placeholder="Ta réponse" required></textarea>
-					</li>
-					<li>
-						<button class="submitAnswer">Kick</button>
-					</li>
-				</ul>
-			</form>
-		</a>
-	<?php endforeach; ?>
+	<div class="posts">
+		<?php	foreach($resultPostsRequest as $resultPostRequest):?>
+				<p class="postList" >
+					<?=$resultPostRequest["title_post"]?>
+					<br/>
+					Créé par :<b><?=$resultPostRequest["pseudo"]?></b>
+					<br/>
+					<small>le: <?=$resultPostRequest["date_post"]?></small>
+				</p>
+				<form method="get" action="discussion" class="form-comments display">
+					<ul>
+						<li>
+							<input type="hidden" name="idPost" value="<?= $resultPostRequest['id'] ?>">
+						</li>
+						<li>
+							<label for="answer"></label>
+							<textarea name="answer" id="answer" rows="10" placeholder="Ta réponse" required></textarea>
+						</li>
+						<li>
+							<button class="submitAnswer">Kick</button>
+						</li>
+					</ul>
+				</form>
+		<?php endforeach; ?>
+  </div>
 		
 	<form method="post">
 		<ul class="ulDiscussion">
