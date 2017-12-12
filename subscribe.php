@@ -36,7 +36,7 @@ if(
 if(isset($_SESSION['connection']) && $_SESSION['connection'] == true)
     {
     	echo "<div class='account'>Bonjour, ".$_SESSION['pseudo'].
-		"<a href='disconnect.php'> Déconexion</a>
+		"<a href='disconnect.php'> <i class='fa fa-times' aria-hidden='true'></i></a>
     	</div>";
     }
 if(!isset($_SESSION['connection']))

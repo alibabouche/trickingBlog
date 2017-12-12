@@ -4,11 +4,11 @@ $(document).ready(function(){
 
 //event sur la page TUTAUX:
 	$(".tutaux .elans").click(function(){
-		
+
 		$(".elan").toggle(500);
 		$(".kicks").toggle(500);
 		$(".acros").toggle(500);
-		
+
 	});
 
 	$(".tutaux .kicks").click(function(){
@@ -16,7 +16,7 @@ $(document).ready(function(){
 		$(".kick").toggle(500);
 		$(".elans").toggle(500);
 		$(".acros").toggle(500);
-		
+
 	});
 
 	$(".tutaux .acros").click(function(){
@@ -24,15 +24,12 @@ $(document).ready(function(){
 		$(".acro").toggle(500);
 		$(".elans").toggle(500);
 		$(".kicks").toggle(500);
-		
+
 	});
 
 //event sur la page DISCUSSION
-	$(".discussion .postList").on("click", function(){
-		$(this).next("form").toggleClass("display");
-		console.log($(this).next("form"));
+//Afficher les commentaires de chaques posts de manière $(this).
+	$(".discussion .postElement").on("click", function(){
+		$(this).find(".form-comments, .text-comments").toggleClass("display");
 	});
-
-
-
 });

@@ -3,7 +3,7 @@ session_start();
 if(isset($_SESSION['connection']) && $_SESSION['connection'] == true)
 {
 	echo "<div class='account'>Bonjour, ".$_SESSION['pseudo'].
-	"<a href='disconnect.php'> Déconexion</a>
+	"<a href='disconnect.php'> <i class='fa fa-times' aria-hidden='true'></i></a>
     </div>";
 
 	$page = "tutaux";
@@ -39,9 +39,9 @@ if(!isset($_SESSION['connection']))
 
 		$query->execute(Array($pseudo, $password));
 		$resultLoginRequest = $query->fetch(PDO::FETCH_ASSOC);
-		
+
 		if (!empty($resultLoginRequest))
-		{				
+		{
 			$_SESSION['connection'] = true;
 			header("Location: index.php");
 		}
@@ -51,7 +51,7 @@ if(!isset($_SESSION['connection']))
 		}
 		//$success = $this->verifyPassword($password, $user['password']);
 		$pdo = null;
-	}	
+	}
 }
 
 ?>

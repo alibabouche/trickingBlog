@@ -2,27 +2,36 @@
 <div class="discussion">
 	<div class="posts">
 		<?php	foreach($resultPostsRequest as $resultPostRequest):?>
-				<p class="postList" >
-					<?=$resultPostRequest["title_post"]?>
-					<br/>
-					Créé par :<b><?=$resultPostRequest["pseudo"]?></b>
-					<br/>
-					<small>le: <?=$resultPostRequest["date_post"]?></small>
-				</p>
+			<div class="postElement">
+        <p class="postList">
+  				<?=$resultPostRequest["title_post"]?>
+  				<br />
+  				Créé par :<b><?=$resultPostRequest["pseudo"]?></b>
+  				<br />
+  				<small>le: <?=$resultPostRequest["date_post"]?></small>
+        </p>
+        <?php foreach($resultCommentsRequest as $resultCommentRequest):?>
+          <p class="text-comments display">
+          <?php if ($resultCommentRequest["id_post"] == $resultPostRequest['id']):?>
+              <?= $resultCommentRequest["comment"] ?>
+          <?php endif; ?>
+          </p>
+        <?php endforeach; ?>
 				<form method="get" action="discussion.php" class="form-comments display">
 					<ul>
 						<li>
 							<input type="hidden" name="idPost" value="<?= $resultPostRequest['id'] ?>">
 						</li>
 						<li>
-							<label for="answer"></label>
-							<textarea name="answer" id="answer" rows="10" placeholder="Ta réponse" required></textarea>
+							<label for="comment"></label>
+							<textarea name="comment" id="comment" rows="10" placeholder="Ta réponse" required="required"></textarea>
 						</li>
 						<li>
 							<button class="submitAnswer">Kick</button>
 						</li>
 					</ul>
 				</form>
+      </div>
 		<?php endforeach; ?>
   </div>
 

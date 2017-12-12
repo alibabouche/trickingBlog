@@ -83,42 +83,43 @@ color orange :#F5AC2D;
 
 /*=================style général========================*/
 body{
-    /*background-image: url("../img/background.jpg");*/
-    background-position: top center;
-    background-repeat: no-repeat;
+  background-image: url("../img/background.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  font-family: Karla;
 }
 small{
-    font-size: 0.6em;
+  font-size: 0.6em;
 }
 .display{
-    display: none;
+  display: none;
 }
 ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
-
 h1{
-    text-align: center;
-    color: #F5AC2D;
+  text-align: center;
+  color: #F5AC2D;
 }
-
 h2{
-    color: #ECDF46;
+  color: #ECDF46;
 }
-
 h3{
-    margin: 0;
+  margin: 0;
 }
-
+a i.fa {
+  font-size: 1.5rem;
+  font-weight: none;
+  vertical-align: center;
+}
 .login{
-    position: absolute;
-    top: 0;
-    right: 2em;
+  position: absolute;
+  top: 0;
+  right: 2em;
 }
-
 .account{
   display: inline-block;
   padding: 0.5em 0.5em 0.5em 0;
@@ -126,74 +127,79 @@ h3{
   border-bottom-right-radius: 1em;
   box-shadow: 0px 0px 4px #6DD0FF;
   position: relative;
+  margin-top: 2rem;
+  color: #F5AC2D;
     }
-
 .index .principalImg{
   display: none;
 }
-
 a{
   text-decoration: none;
   text-transform: uppercase;
   font-weight: normal;
   color: #F4A74B;
 }
-
 header nav{
   margin: 2em 0;
+}
+header nav ul li a {
+  padding: 0.7rem 2rem;
 }
 header nav ul li a:active,
 header nav ul li a:focus,
 header nav ul li a:hover
 {
-    text-shadow: 0px 0px 5px grey;
+  text-shadow: 0px 0px 5px grey;
+  background-color: rgba(108,155,189,0.7);
+  transition: ease 0.4s;
+  color: #000;
 }
 
 /*=================style des formulaires========================*/
 .login{
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
 form{
-    margin: 0 auto;
-    width: 50%;
-    color: #F4A74B;
+  margin: 0 auto;
+  width: 50%;
+  color: #F4A74B;
 }
 form ul li{
-    display: flex;
-    justify-content: space-between;
-    margin: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5em;
 }
 form ul li:last-child{
-    justify-content: center;
-    margin: 1em;
+  justify-content: center;
+  margin: 1em;
 }
 form ul li input{
-    background-color: transparent;
-    border: none;
-    border-bottom: solid 2px #F4A74B;
-    text-align: center;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 2px #F4A74B;
+  text-align: center;
 }
 form ul li input:first-child{
-    background-color: rgba(219,167,75,0.1);
-    border: solid 2px #F4A74B;
+  background-color: rgba(219,167,75,0.1);
+  border: solid 2px #F4A74B;
 }
 
 /*===============INDEX========================*/
 
 .principalImg{
-    display: block;
-    width: 40em;
-    margin: 5em auto;
-    animation: ease 1s opacitation;
-    border: solid #446B8A 10px;
-    box-shadow: 1px 1px 5px black;
+  display: block;
+  width: 40em;
+  margin: 5em auto;
+  animation: ease 1s opacitation;
+  border: solid #446B8A 10px;
+  box-shadow: 1px 1px 5px black;
 }
 
 /*===============TUTAUX========================*/
 
 .tutaux{
-    text-align: center;
+  text-align: center;
 }
 
 .tutaux .elans,
@@ -208,10 +214,9 @@ form ul li input:first-child{
   animation: opacitateBlue 0.3s ease-in-out;
   background-color: rgba(108,155,189,0.7)
 }
-
-iframe{
+video{
   width: 90%;
-  margin: 1em;
+  border: 2px solid #F5AC2D;
 }
 
 /*===============DISCUSSION========================*/
@@ -222,96 +227,90 @@ iframe{
 .discussion a form ul{
   width: 70%;
 }
-
 .discussion a form ul li textarea{
   width: 100%;
 }
-
 .discussion a form ul li label{
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
-
 .discussion li input{
-    text-align: left;
-    background-color: transparent;
-    border-bottom: solid 2px #F4A74B;
+  text-align: left;
+  background-color: transparent;
+  border-bottom: solid 2px #F4A74B;
 }
-
 .discussion li:last-child input,
 .discussion li:last-child button{
-    width: 5em;
-    text-align: center;
-    background-color: transparent;
-    border: solid 2px #F4A74B;
-    margin: 1em;
+  width: 5em;
+  text-align: center;
+  background-color: transparent;
+  border: solid 2px #F4A74B;
+  margin: 1em;
 }
-
 .discussion textarea{
-    background-color: transparent;
-    border: solid 2px #F4A74B;
-    height: 5em;
-    resize: none;
-    width: 100%;
+  background-color: transparent;
+  border: solid 2px #F4A74B;
+  height: 5em;
+  resize: none;
+  width: 100%;
 }
 
 /*===================style des postes=============*/
 
 .postList{
-    color: #F5AC2D;
-    text-transform: lowercase;
-    width: 100%;
+  color: #F5AC2D;
+  text-transform: lowercase;
+  width: 100%;
 }
 .postList:hover{
-    animation: opacitateBlue 0.3s ease-in-out;
-    background-color: rgba(108,155,189,0.7);
-    cursor: pointer;
+  animation: opacitateBlue 0.3s ease-in-out;
+  background-color: rgba(108,155,189,0.7);
+  cursor: pointer;
 }
-
 
 /*===============FOOTER========================*/
 #footerLine{
-    background-color: #446B8A;
-    height: 3px;
+  background-color: #446B8A;
+  height: 3px;
 }
 
 /* ==========================================================================
-   Media Queries
-   ========================================================================== */
+ Media Queries
+ ========================================================================== */
 
 @media screen and (min-width: 390px) {
-    .layout ul{
-        display: flex;
-        justify-content: space-around;
-    }
+  .layout ul{
+      display: flex;
+      justify-content: space-around;
+  }
 
-    .index .principalImg{
-        display: block;
-    }
+  .index .principalImg{
+      display: block;
+  }
 
-    .acount{
-        position: absolute;
-        top: 10em;
-        left: 0;
-    }
+  .acount{
+      position: absolute;
+      top: 10em;
+      left: 0;
+  }
 
-    .ulDiscussion textarea,
-    .ulDiscussion li input{
-    width: 100%;
-    }
-    .ulDiscussion{
-        width: 85%;
-    }
+  .ulDiscussion textarea,
+  .ulDiscussion li input{
+  width: 100%;
+  }
+  .ulDiscussion{
+      width: 85%;
+  }
 
-    .tutaux ul li ul li{
-        display: inline-block;
-        width: 25%;
-    }
+  .tutaux ul li ul li{
+      display: inline-block;
+      width: 25%;
+  }
 }
 
 @media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
+     (-o-min-device-pixel-ratio: 5/4),
+     (-webkit-min-device-pixel-ratio: 1.25),
+     (min-resolution: 120dpi) {
 
 }
 
