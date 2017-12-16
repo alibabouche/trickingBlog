@@ -1,7 +1,5 @@
 $(document).ready(function(){
 	"use strict";
-
-
 //event sur la page TUTAUX:
 	$(".tutaux .elans").click(function(){
 
@@ -29,7 +27,19 @@ $(document).ready(function(){
 
 //event sur la page DISCUSSION
 //Afficher les commentaires de chaques posts de manière $(this).
-	$(".discussion .postElement").on("click", function(){
-		$(this).find(".form-comments, .text-comments").toggleClass("display");
+	$(".discussion .postList").on("click", function(){
+
+		$(".discussion .postList").toggleClass("display");
+		$(".discussion .form-article").toggleClass("display");
+		$(this).toggleClass("display");
+		$(this).siblings(".form-comments, .text-comments").toggleClass("display");
+		$(this).siblings(".article").toggleClass("display");
+
 	});
+
+	$(".discussion button.submitAnswer").trigger("submit", function(){
+		console.log($(this).parent("li").prev().find("textarea").val(""));
+	});
+
+	
 });

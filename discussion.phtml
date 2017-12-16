@@ -8,16 +8,26 @@
   				<br />
   				Créé par :<b><?=$resultPostRequest["pseudo"]?></b>
   				<br />
-  				<small>le: <?=$resultPostRequest["date_post"]?></small>
+  				<small>le:
+						<?php
+							//formatage de la date du post
+							$datePost = date_create_from_format('Y-m-d H:i:s', $resultPostRequest["date_post"]);
+							echo date_format($datePost, "d-m-Y");
+						?></small>
         </p>
+				<p class="article display">
+					<?= $resultPostRequest["article"] ?>
+				</p>
         <?php foreach($resultCommentsRequest as $resultCommentRequest):?>
           <p class="text-comments display">
           <?php if ($resultCommentRequest["id_post"] == $resultPostRequest['id']):?>
-              <?= $resultCommentRequest["comment"] ?>
+							<span><?= $queryAuthorRequest["pseudo"] ?></span>
+							<span><?= $queryAuthorRequest["date_comment"] ?></span>
+              <span><?= $resultCommentRequest["comment"] ?></span>
           <?php endif; ?>
           </p>
         <?php endforeach; ?>
-				<form method="get" action="discussion.php" class="form-comments display">
+				<form method="post" action="discussion.php" class="form-comments display">
 					<ul>
 						<li>
 							<input type="hidden" name="idPost" value="<?= $resultPostRequest['id'] ?>">
@@ -35,7 +45,7 @@
 		<?php endforeach; ?>
   </div>
 
-	<form method="post">
+	<form method="post" class="form-article">
 		<ul class="ulDiscussion">
 			<li>
 				<label for="posts"></label>

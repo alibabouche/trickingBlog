@@ -25,23 +25,32 @@
 			header ("Location: discussion.php");
 		}
 
-		//recherche des posts
 		include "connectionPDO.php";
-		$query = $pdo->prepare("SELECT title_post, date_post, authors.pseudo, posts.id
+		//recherche des utilisateurs commentaires
+		$idSession = $_SESSION['idSession'];
+		$queryAuthor = $pdo->prepare("SELECT pseudo, date_comment
+		FROM authors
+		INNER JOIN comments ON comments.id_author = authors.id
+		WHERE ? = id_author");
+		$queryAuthor->execute([$idSession]);
+		$queryAuthorRequest = $queryAuthor->fetch(PDO::FETCH_ASSOC);
+
+		//recherche des posts
+		$query = $pdo->prepare("SELECT title_post, date_post, authors.pseudo, posts.id, article
 		FROM posts
 		INNER JOIN authors ON authors.id = posts.id_author;");
 		$query->execute();
 		$resultPostsRequest = $query->fetchAll(PDO::FETCH_ASSOC);
-		$pdo = null;
 
 		//rechercher des commentaires
-		include "connectionPDO.php";
 		$queryComments = $pdo->prepare("SELECT comment, comments.id_post
 		FROM posts
 		INNER JOIN comments ON comments.id_post = posts.id;");
 		$queryComments->execute();
 		$resultCommentsRequest = $queryComments->fetchAll(PDO::FETCH_ASSOC);
+
 		$pdo = null;
+
 		/*
 		echo '<pre>';
 		var_dump($resultCommentsRequest);
@@ -49,14 +58,14 @@
 		<?php echo '<pre>'; var_dump($resultCommentsRequest); echo '</pre>'; ?>
 		*/
 
-		if(isset($_GET["idPost"]) && isset($_GET["comment"]))
+		if(isset($_POST["idPost"]) && isset($_POST["comment"]))
 		{
-			$idPost = $_GET["idPost"];
-			$comment = $_GET["comment"];
+			$idPost = $_POST["idPost"];
+			$comment = $_POST["comment"];
 			$idSession = $_SESSION['idSession'];
 			//insertion des commentaires
 			include "connectionPDO.php";
-			$query = $pdo->prepare(" INSERT INTO comments VALUES (null, ?,?,?)");
+			$query = $pdo->prepare(" INSERT INTO comments VALUES (null, ?,?,?, NOW())");
 			$query->execute([$idSession, $idPost, $comment]);
 			$pdo = null;
 		}

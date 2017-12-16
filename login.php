@@ -35,9 +35,6 @@ if(isset($_POST["pseudo"]) && isset($_POST["password"]))
 		header("Location: index.php");
 	}
 }
-
-
-
 if(isset($_SESSION['connection']) && $_SESSION['connection'] == true)
     {
     	echo "<div class='account'>Bonjour, ".$_SESSION['pseudo'].
