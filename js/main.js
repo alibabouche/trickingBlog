@@ -30,9 +30,11 @@ $(document).ready(function(){
 	$(".discussion .postList").on("click", function(){
 
 		$(".discussion .postList").toggleClass("display");
+		//$(".discussion .postList").toggleClass("display");
 		$(".discussion .form-article").toggleClass("display");
+		$(this).next().toggleClass("display");
 		$(this).toggleClass("display");
-		$(this).siblings(".form-comments, .text-comments").toggleClass("display");
+		$(this).find(".text-comments, .article").toggleClass("display");
 		$(this).siblings(".article").toggleClass("display");
 
 	});
@@ -41,5 +43,5 @@ $(document).ready(function(){
 		console.log($(this).parent("li").prev().find("textarea").val(""));
 	});
 
-	
+
 });

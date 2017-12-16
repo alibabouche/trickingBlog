@@ -83,7 +83,7 @@ color orange :#F5AC2D;
 
 /*=================style général========================*/
 body{
-  /*background-image: url("../img/background.jpg");*/
+  background-image: url("../img/background.jpg");
   background-position: top center;
   background-repeat: no-repeat;
   font-family: Karla;
@@ -106,6 +106,7 @@ h1{
 }
 h2{
   color: #ECDF46;
+  margin: 0;
 }
 h3{
   margin: 0;
@@ -255,16 +256,53 @@ video{
 }
 
 /*===================style des postes=============*/
-
+.discussion .postElement {
+  max-height: 2.5rem;
+}
+.discussion .posts {
+  border: 1px solid black;
+  width: 60%;
+  min-height: 20rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  box-shadow: 0px 0px 7px #F5AC2D;
+}
 .postList{
   color: #F5AC2D;
-  text-transform: lowercase;
-  width: 100%;
+  padding: 0.2rem 0.5rem;
+  max-height: 2.5rem;
 }
+.postList h2 {
+  color: #F5AC2D;
+  min-width: 50%;
+  text-align: left;
+  float: left;
+}
+.discussion .postList h2 + div {
+  min-width: 10rem;
+}
+/*
+.discussion .postList::after {
+  clear: both;
+  overflow: hidden;
+  content: ".";
+  display: block;
+  height: 0;
+  text-indent: 10000px;
+}*/
 .postList:hover{
   animation: opacitateBlue 0.3s ease-in-out;
   background-color: rgba(108,155,189,0.7);
   cursor: pointer;
+}
+.discussion .post-content {
+  display: block;
+}
+.discussion .text-comment {
+  display: block;
+}
+.discussion .text-comment span{
+  display: inline;
 }
 
 /*===============FOOTER========================*/
